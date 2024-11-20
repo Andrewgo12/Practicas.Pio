@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    height: 100vh;
+    /* Altura total de la ventana */
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    /* Aumenta el padding para un mejor espaciado */
+    border-radius: 10px;
+    /* Mejora la curvatura de las esquinas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    /* Sombras más suaves */
+    width: 400px;
+    /* Reduce el ancho para que se vea más compacto */
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    /* Aumenta el tamaño del título para mayor impacto */
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 16px;
+    /* Mejora la legibilidad de las etiquetas */
+}
+
+input[type="number"] {
+    width: calc(100% - 20px);
+    /* Ocupa todo el ancho menos el padding */
+    padding: 10px;
+    /* Aumenta el padding para mayor comodidad */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Esquinas más suaves */
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    /* Aumenta el padding para un botón más grande */
+    border: none;
+    border-radius: 5px;
+    /* Mejora la curvatura de las esquinas */
+    cursor: pointer;
+    font-size: 18px;
+    /* Aumenta el tamaño de la fuente del botón */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Añade una transición al hover */
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Un color más oscuro al pasar el cursor */
+    transform: scale(1.05);
+    /* Aumenta el tamaño del botón ligeramente al pasar el cursor */
+}
