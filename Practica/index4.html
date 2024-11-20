@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Aventura Global - Formularios de turismo, usuarios, roles, paquetes e inventarios">
+    <meta name="author" content="Aventura Global Team">
+    <link rel="stylesheet" href="styles5.css">
+    <title>Aventura Global - Sistema de Gestión</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="branding">
+                <h1>Aventura Global</h1>
+                <section class="about-section">
+                    <h2>Bienvenido a Nuestra Plataforma de Gestión de Reservas y Paquetes</h2>
+                    <p>
+                        Nuestra Plataforma de Gestión de Reservas y Paquetes está diseñada para ofrecerte una experiencia única y fluida al momento de planificar tus viajes. Con una interfaz intuitiva y funcionalidades avanzadas, podrás gestionar todas tus reservas en un solo lugar, desde alojamiento y transporte hasta actividades y excursiones. 
+                    </p>
+                    <p>
+                        Nos esforzamos por proporcionarte la mejor atención y servicio al cliente, garantizando que cada reserva cumpla con tus expectativas. Nuestra plataforma permite comparar precios, leer opiniones de otros usuarios y elegir los paquetes que mejor se adapten a tus necesidades y presupuesto. 
+                    </p>
+                    <p>
+                        Ya sea que estés planeando una escapada de fin de semana o unas vacaciones prolongadas, nuestra herramienta te ayudará a ahorrar tiempo y dinero. Además, ofrecemos soporte 24/7 para resolver cualquier duda o inconveniente que pueda surgir durante el proceso de reserva. 
+                    </p>
+                    <p>
+                        ¡Explora nuestra amplia gama de paquetes turísticos y empieza a crear recuerdos inolvidables con solo unos clics!
+                    </p>
+                </section>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#reservas">Reservas</a></li>
+                    <li><a href="#habitaciones">Habitaciones</a></li>
+                    <li><a href="#huespedes">Huéspedes</a></li>
+                    <li><a href="#usuarios">Usuarios</a></li>
+                    <li><a href="#roles">Roles</a></li>
+                    <li><a href="#paquetes">Paquetes</a></li>
+                    <li><a href="#inventarios">Inventarios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="notification" class="notification">
+                <p id="notificationMessage"></p>
+                <button id="closeNotification">Cerrar</button>
+            </div>
+
+            <section class="form-section">
+                <h2>Formularios de Gestión</h2>
+                <div class="form-grid">
+
+                    <!-- Formulario de Reservas -->
+                    <div class="form-card " id="reservas">
+                        <div class="media-section">
+                            <img src="../Practica/img/reserva.png" alt="Descripción de la imagen de reservas">
+                        </div>
+                        <form id="formReservas" class="form" autocomplete="off">
+                            <h3>Formulario de Reservas</h3>
+                            <div class="form-group">
+                                <label for="nombreReserva">Nombre:</label>
+                                <input type="text" id="nombreReserva" name="nombreReserva" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fechaReserva">Fecha de reserva:</label>
+                                <input type="date" id="fechaReserva" name="fechaReserva" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="personasReserva">Número de personas:</label>
+                                <input type="number" id="personasReserva" name="personasReserva" min="1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Reservar</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Habitaciones -->
+                    <div class="form-card" id="habitaciones">
+                        <div class="media-section">
+                            <img src="../Practica/img/habitaciones.png" alt="Descripción de la imagen de habitaciones">
+                        </div>
+                        <form id="formHabitaciones" class="form" autocomplete="off">
+                            <h3>Formulario de Habitaciones</h3>
+                            <div class="form-group">
+                                <label for="tipoHabitacion">Tipo de Habitación:</label>
+                                <select id="tipoHabitacion" name="tipoHabitacion" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="doble">Doble</option>
+                                    <option value="suite">Suite</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroHabitacion">Número de habitación:</label>
+                                <input type="text" id="numeroHabitacion" name="numeroHabitacion" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Habitación</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Huéspedes -->
+                    <div class="form-card" id="huespedes">
+                        <div class="media-section">
+                            <img src="../Practica/img/huespedes.png" alt="Descripción de la imagen de huéspedes">
+                        </div>
+                        <form id="formHuespedes" class="form" autocomplete="off">
+                            <h3>Formulario de Huéspedes</h3>
+                            <div class="form-group">
+                                <label for="nombreHuesped">Nombre:</label>
+                                <input type="text" id="nombreHuesped" name="nombreHuesped" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="documentoHuesped">Documento de Identidad:</label>
+                                <input type="text" id="documentoHuesped" name="documentoHuesped" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoHuesped">Teléfono:</label>
+                                <input type="tel" id="telefonoHuesped" name="telefonoHuesped" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrar Huésped</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Usuarios -->
+                    <div class="form-card" id="usuarios">
+                        <div class="media-section">
+                            <img src="../Practica/img/usuarios.png" alt="Descripción de la imagen de usuarios">
+                        </div>
+                        <form id="formUsuarios" class="form" autocomplete="off">
+                            <h3>Formulario de Usuarios</h3>
+                            <div class="form-group">
+                                <label for="nombreUsuario">Nombre de usuario:</label>
+                                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailUsuario">Email:</label>
+                                <input type="email" id="emailUsuario" name="emailUsuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rolUsuario">Rol de usuario:</label>
+                                <select id="rolUsuario" name="rolUsuario" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="administrador">Administrador</option>
+                                    <option value="empleado">Empleado</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Roles -->
+                    <div class="form-card" id="roles">
+                        <div class="media-section">
+                            <img src="../Practica/img/roles.png" alt="Descripción de la imagen de roles">
+                        </div>
+                        <form id="formRoles" class="form" autocomplete="off">
+                            <h3>Formulario de Roles</h3>
+                            <div class="form-group">
+                                <label for="nombreRol">Nombre del rol:</label>
+                                <input type="text" id="nombreRol" name="nombreRol" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionRol">Descripción del rol:</label>
+                                <textarea id="descripcionRol" name="descripcionRol" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear Rol</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Paquetes -->
+                    <div class="form-card" id="paquetes">
+                        <div class="media-section">
+                            <img src="../Practica/img/paquetes.png" alt="Descripción de la imagen de paquetes">
+                        </div>
+                        <form id="formPaquetes" class="form" autocomplete="off">
+                            <h3>Formulario de Paquetes</h3>
+                            <div class="form-group">
+                                <label for="nombrePaquete">Nombre del paquete:</label>
+                                <input type="text" id="nombrePaquete" name="nombrePaquete" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precioPaquete">Precio:</label>
+                                <input type="number" id="precioPaquete" name="precioPaquete" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionPaquete">Descripción:</label>
+                                <textarea id="descripcionPaquete" name="descripcionPaquete" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Paquete</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Inventarios -->
+                    <div class="form-card" id="inventarios">
+                        <div class="media-section">
+                            <img src="../Practica/img/inventarios.png" alt="Descripción de la imagen de inventarios">
+                        </div>
+                        <form id="formInventarios" class="form" autocomplete="off">
+                            <h3>Formulario de Inventarios</h3>
+                            <div class="form-group">
+                                <label for="productoInventario">Producto:</label>
+                                <input type="text" id="productoInventario" name="productoInventario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadInventario">Cantidad:</label>
+                                <input type="number" id="cantidadInventario" name="cantidadInventario" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ubicacionInventario">Ubicación:</label>
+                                <input type="text" id="ubicacionInventario" name="ubicacionInventario" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Actualizar Inventario</button>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+            <button id="verOtroHtml" class="btn btn-secondary">Ver otro HTML</button>
+        </div>
+        
+        <section id="resultado" class="resultado-section" style="display: none;">
+            <h2>Datos Ingresados</h2>
+            <div id="datosIngresados"></div>
+            <p id="fechaHora"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aventura Global. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

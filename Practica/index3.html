@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../controller/css/stylesidemenusubmenu.css">
+    <link rel="stylesheet" href="styles3.css"/>
+    <title>Menú Superior Sencillo</title>
+</head>
+<body>
+    <button class="abrir-menu" onclick="toggleMenu()">Abrir Menú</button>
+
+    <nav id="menu" style="display: flex;">
+        <a href="#inicio">Inicio</a>
+        <a href="#acerca-de">Acerca de</a>
+        <a href="#referencia">Referencia</a>
+        <a href="#informacion">Información</a>
+    </nav>
+
+    <div id="vertical-menu" style="display: none;">
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#acerca-de">Acerca de</a>
+            <a href="#referencia">Referencia</a>
+            <a href="#informacion">Información</a>
+        </nav>
+    </div>
+
+    <section id="menuds">
+        <section id="inicio">
+            <h1>Inicio</h1>
+            <p>Bienvenido a la página de inicio.</p>
+        </section>
+        <section id="acerca-de">
+            <h1>Acerca de</h1>
+            <p>Esta es la sección Acerca de.</p>
+        </section>
+        <section id="referencia">
+            <h1>Referencia</h1>
+            <p>Información de referencia.</p>
+        </section>
+        <section id="informacion">
+            <h1>Información</h1>
+            <p>Sección de información adicional.</p>
+        </section>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const verticalMenu = document.getElementById("vertical-menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+                verticalMenu.style.display = "block";
+            } else {
+                menu.style.display = "flex";
+                verticalMenu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to right, #1a1a2e, #16213e);
+    /* Fondo degradado elegante */
+    color: #ffffff;
+    /* Color del texto blanco para contraste */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    /* Fondo blanco con transparencia */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada */
+    padding: 40px;
+    /* Espacio interior */
+    max-width: 400px;
+    /* Ancho máximo */
+    width: 100%;
+    /* Ancho completo */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque en el fondo */
+}
+
+h1 {
+    font-size: 28px;
+    /* Tamaño de fuente del título más grande */
+    margin-bottom: 30px;
+    /* Espaciado inferior */
+    text-align: center;
+    /* Centrar el texto dentro del contenedor */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Espaciado entre grupos */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    /* Negrita */
+    font-size: 16px;
+    /* Tamaño de fuente consistente */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    /* Ancho completo */
+    padding: 12px;
+    /* Padding cómodo */
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    /* Bordes más redondeados */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    background-color: #f4f6f8;
+    /* Fondo claro */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Transiciones suaves */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #3498db;
+    /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    /* Sombra al enfocar */
+    outline: none;
+    /* Sin borde predeterminado */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    /* Ancho completo */
+    padding: 12px;
+    /* Mantener un buen tamaño de botón */
+    background-color: #28a745;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia a puntero */
+    font-size: 18px;
+    /* Tamaño de fuente del botón */
+    font-weight: bold;
+    /* Negrita */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Transiciones suaves */
+}
+
+button:hover {
+    background-color: #218838;
+    /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px);
+    /* Elevación al pasar el mouse */
+}
+
+select {
+    padding: 12px;
+    /* Padding para el select */
+    font-size: 16px;
+    /* Tamaño de fuente consistente */
+}
+
+select option[value="masculino"] {
+    background-color: #3498db;
+    /* Azul para masculino */
+    color: white;
+}
+
+select option[value="femenino"] {
+    background-color: #e57373;
+    /* Rosa para femenino */
+    color: white;
+}
+
+select option[value="otro"] {
+    background-color: #bdc3c7;
+    /* Color neutro */
+    color: black;
+}

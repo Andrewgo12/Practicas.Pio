@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Estiloformualrio.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Agregar Empleados</h1>
+    <form id="employeeForm">
+        <div class="form-group">
+            <label for="employeeId">ID Empleado:</label>
+            <input type="text" id="employeeId" required>
+        </div>
+        <div class="form-group">
+            <label for="cargoId">ID Cargo:</label>
+            <input type="text" id="cargoId" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+        </div>
+        <button type="submit">Agregar Empleado</button>
+        <button type="button" id="clearBtn">Limpiar</button>
+    </form>
+
+    <h2>Lista de Empleados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Empleado</th>
+                <th>ID Cargo</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="employeeList">
+        </tbody>
+    </table>
+
+    <script src="./js/FormulariosEmpleados.js"></script>
+</body>
+
+</html>

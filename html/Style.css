@@ -1,0 +1,113 @@
+body {
+    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinea el formulario al inicio */
+    height: 100vh;
+    margin: 20px 0 0 0;
+    /* Alinea el body 20px desde la parte superior */
+}
+
+.form {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: left;
+    font-size: 12px;
+    /* Texto más pequeño */
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 12px;
+    /* Tamaño de fuente reducido */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+input:valid,
+textarea:valid {
+    border-color: #28a745;
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: #dc3545;
+}
+
+input:valid:required {
+    background-image: linear-gradient(to right, #ffcc00, #ff6600);
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 12px;
+    /* Botón más pequeño */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 12px;
+}
+
+.form fieldset {
+    margin-top: 15px;
+    border: none;
+    padding: 0;
+}
+
+input[type="radio"]:checked+label,
+input[type="checkbox"]:checked+label {
+    color: #007bff;
+    font-weight: bold;
+}
+
+legend {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 10px;
+        padding: 8px;
+    }
+}

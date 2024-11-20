@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Acceso de Estudiantes</title>
+    <link rel="stylesheet" href="../css/EstiloFP.css"> 
+</head>
+<body>
+    <!-- Contenedor para mensajes de éxito o error -->
+    <div id="mensajes"></div>
+
+    <section id="formulario">
+        <h3>Registro y Acceso de Estudiantes</h3>
+        <div class="form-row">
+            <!-- Formulario de Registro de Estudiantes -->
+            <div class="form-box">
+                <h4>Registro de Estudiantes</h4>
+                <form id="form-estudiantes-registro" action="../html/Institutopio.html" method="get">
+                    <label for="nombre-estudiante">Nombre:</label>
+                    <input type="text" id="nombre-estudiante" name="nombre" required>
+                    
+                    <label for="email-estudiante">Email:</label>
+                    <input type="email" id="email-estudiante" name="email" required>
+                    
+                    <label for="curso-estudiante">Curso:</label>
+                    <input type="text" id="curso-estudiante" name="curso" required>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+            
+            <!-- Formulario de Ingreso de Estudiantes -->
+            <div class="form-box">
+                <h4>Ingreso de Estudiantes</h4>
+                <form id="form-estudiantes-ingreso" action="../html/IngresoEstudiantes.html" method="get">
+                    <label for="nombre-registro">Nombre:</label>
+                    <input type="text" id="nombre-registro" name="nombre" required>
+                    
+                    <label for="email-registro">Email:</label>
+                    <input type="email" id="email-registro" name="email" required>
+                    
+                    <label for="curso-registro">Curso Actual:</label>
+                    <input type="text" id="curso-registro" name="curso" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Botón para regresar a la página principal -->
+        <div class="button-container">
+            <a href="../html/Institutopio.html" class="btn">Regresar a la Página Principal</a>
+        </div>
+        
+    </section>
+    <script src="../js/ventanas.js"></script>
+</body>
+</html>

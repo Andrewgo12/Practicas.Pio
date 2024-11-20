@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con Javascript</title>
+    <style>
+        #formRegistro{
+            width: 600px;
+            margin: 10vh auto 0 auto;
+            padding: 20px;
+            border-radius: 4px;
+            background-color: lightgray;
+            font-size: 13px;
+        }
+
+        #formRegistro button{
+            padding: 10px;
+            margin-top: 10px;
+            width: 50%;
+            color: white;
+            background-color:rgb(41,57,194);
+            border: none;
+            border-radius: 4px;
+        }
+
+        .input-control{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-control input{
+            border: 2px solid lightslategray;
+            border-radius: 4px;
+            display: block;
+            font-size: 13px;
+            padding: 10px;
+            width: 65%;
+        }
+
+        .input-control input:focus{
+            outline: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="formRegistro">
+        <div class="input-control">
+            <input type="text" id="usuario" placeholder="Ingrese nombre de usuario">
+        </div>
+        <br>
+        <div class="input-control">
+            <input type="password" id="clave" placeholder="Ingrese su contraseña" onblur="verificar(this);">
+        </div>
+        <br>
+        <button type="submit">Confirmar</button>
+    </form>
+    <script>
+        /*
+            Solicitar que se ingrese el nombre y la clave de un usuario. Mostrar una ventana de alerta si 
+            en la clave se ingresan menos de 7 caracteres o más de 20 (capturar el evento onBlur).
+        */
+
+
+        function verificar(control){
+            if(control.value.length < 7 || control.value.length > 20){
+                alert('Cantidad de caracteres no válido en la clave. Debe ser entre 7-20 caracteres.')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Registro</title>
+
+</head>
+
+<body>
+    <h1>Datos Registrados</h1>
+    <div id="dataDisplay"></div>
+    <button id="clearData">Limpiar Datos</button>
+
+    <script>
+        const dataDisplay = document.getElementById('dataDisplay');
+        const clearData = document.getElementById('clearData');
+        const storedData = JSON.parse(localStorage.getItem('dataStorage')) || [];
+
+        function displayData() {
+            dataDisplay.innerHTML = "";
+            storedData.forEach(data => {
+                const div = document.createElement('div');
+                div.textContent = JSON.stringify(data);
+                dataDisplay.appendChild(div);
+            });
+        }
+        clearData.addEventListener('click', function () {
+            localStorage.removeItem('dataStorage');
+            displayData();
+        });
+
+        displayData(); 
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #dataDisplay {
+            margin-top: 20px;
+        }
+    </style>
+</body>
+
+</html>

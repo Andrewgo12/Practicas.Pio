@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Registro de Profesores</h1>
+    </header>
+
+    <form id="formProfesores" onsubmit="return registrarProfesor()">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="materia">Materia:</label>
+        <input type="text" id="materia" name="materia" required>
+
+        <label for="grado">Grado Asignado:</label>
+        <input type="text" id="grado" name="grado" required>
+        
+        <label for="jornada">Jornada:</label>
+        <select id="jornada" name="jornada" required>
+            <option value="">Seleccione una jornada</option>
+            <option value="mañana">Mañana</option>
+            <option value="tarde">Tarde</option>
+        </select>
+
+        <button type="submit">Registrar Profesor</button>
+    </form>
+
+    <button onclick="window.location.href='index.html'">Regresar al Inicio</button>
+
+    <section id="listaProfesores">
+        <h2>Profesores Registrados:</h2>
+        <ul id="profesoresRegistrados"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sistema Escolar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con Javascript</title>
+    <style>
+        #formRegistro{
+            width: 600px;
+            margin: 10vh auto 0 auto;
+            padding: 20px;
+            border-radius: 4px;
+            background-color: lightgray;
+            font-size: 13px;
+        }
+
+        #formRegistro button{
+            padding: 10px;
+            margin-top: 10px;
+            width: 50%;
+            color: white;
+            background-color:rgb(41,57,194);
+            border: none;
+            border-radius: 4px;
+        }
+
+        .input-control{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-control input{
+            border: 2px solid lightslategray;
+            border-radius: 4px;
+            display: block;
+            font-size: 13px;
+            padding: 10px;
+            width: 65%;
+        }
+
+        .input-control input:focus{
+            outline: 0;
+        }
+    </style>
+</head>
+<body onload="activarPrimerControl();">
+    <form action="" id="formRegistro">
+        <div class="input-control">
+            <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        </div>
+        <br>
+        <div class="input-control">
+            <input type="text" id="edad" placeholder="Ingrese su edad">
+        </div>
+        <br>
+        <button type="submit">Confirmar</button>
+    </form>
+    <script>
+        function activarPrimerControl(){
+            document.getElementById('nombre').focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Notas</title>
+    <link rel="stylesheet" href="../css/EstiloGeneral.css">
+</head>
+<body>
+    <header>
+        <h1>Enviar Notas</h1>
+    </header>
+    <main>
+        <section id="enviar-notas">
+            <h2>Formulario para Enviar Notas</h2>
+            <form id="form-enviar-notas" action="../php/procesar_envio_notas.php" method="post">
+                <label for="nombre-estudiante">Nombre del Estudiante:</label>
+                <input type="text" id="nombre-estudiante" name="nombre" required>
+                
+                <label for="curso-estudiante">Curso:</label>
+                <input type="text" id="curso-estudiante" name="curso" required>
+                
+                <label for="asignatura">Asignatura:</label>
+                <input type="text" id="asignatura" name="asignatura" required>
+                
+                <label for="nota">Nota:</label>
+                <input type="number" id="nota" name="nota" min="0" max="100" required>
+                
+                <button type="submit">Enviar Notas</button>
+            </form>
+        </section>
+        
+        <!-- Botón para regresar a la página principal -->
+        <div class="button-container">
+            <a href="../html/Institutopio.html" class="btn">Regresar a la Página Principal</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Institución Educativa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

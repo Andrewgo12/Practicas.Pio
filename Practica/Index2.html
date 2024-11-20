@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Tipo de Usuario</title>
+    <link rel="stylesheet" href="../Practica/styles2.css"/> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registrar Tipo de Usuario</h2>
+        <form action="guardar_tipo_usuario.php" method="post">
+            <div class="form-group">
+                <label for="ID_TipoUsuario">ID</label>
+                <input type="text" id="ID_TipoUsuario" name="ID_TipoUsuario" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Descripcion_Usuario">Descripción:</label>
+                <input type="text" id="Descripcion_Usuario" name="Descripcion_Usuario" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="FechaCreacion">Fecha de Creación:</label>
+                <input type="datetime-local" id="FechaCreacion" name="FechaCreacion" required class="form-control">
+            </div>
+            <input type="submit" value="Registrar" class="btn btn-primary">
+        </form>
+
+        <h2 class="text-center">Lista de Tipos de Usuario</h2>
+        <div class="table-container">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Creación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (file_exists(__DIR__ . "/../../../../src/Controllers/conexion.php")) {
+                        include(__DIR__ . "/../../../../src/Controllers/conexion.php");
+                    } else {
+                        echo "El archivo de conexión no existe en la ruta especificada.";
+                        exit();
+                    }
+
+                    if ($conn === false) {
+                        echo "Error al conectar a la base de datos.";
+                        exit();
+                    }
+
+                    $sql = "SELECT ID_TipoUsuario, Descripcion_Usuario, FechaCreacion FROM TIPO_USUARIOS";
+                    $stmt = sqlsrv_query($conn, $sql);
+
+                    if ($stmt === false) {
+                        echo "Error al recuperar los registros.";
+                        print_r(sqlsrv_errors());
+                        exit();
+                    }
+
+                    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['ID_TipoUsuario']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Descripcion_Usuario']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['FechaCreacion'] !== null ? $row['FechaCreacion']->format('Y-m-d H:i:s') : 'N/A') . "</td>";
+                        echo "<td>";
+
+                        echo "<a href='#' class='btn btn-info btn-sm' data-toggle='modal' data-target='#modalDetail'
+                            data-id='" . htmlspecialchars($row['ID_TipoUsuario']) . "' 
+                            data-descripcion='" . htmlspecialchars($row['Descripcion_Usuario']) . "' 
+                            data-fecha='" . htmlspecialchars($row['FechaCreacion'] !== null ? $row['FechaCreacion']->format('Y-m-d H:i:s') : 'N/A') . "'>Ver Detalles</a> | ";
+
+                        echo "<button type='button' class='btn btn-warning btn-sm' onclick='abrirModalActualizar(\"" . htmlspecialchars($row['ID_TipoUsuario']) . "\", \"" . htmlspecialchars($row['Descripcion_Usuario']) . "\", \"" . htmlspecialchars($row['FechaCreacion'] !== null ? $row['FechaCreacion']->format('Y-m-d H:i:s') : 'N/A') . "\")'>Actualizar</button> | ";
+
+                        echo "<form action='eliminar_tipo_usuario.php' method='POST' style='display:inline;' onsubmit=\"return confirm('¿Estás seguro de que deseas eliminar este registro?');\">";
+                        echo "<input type='hidden' name='ID_TipoUsuario' value='" . htmlspecialchars($row['ID_TipoUsuario']) . "'>";
+                        echo "<button type='submit' class='btn btn-danger btn-sm'>Eliminar</button>";
+                        echo "</form>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+
+                    sqlsrv_free_stmt($stmt);
+                    sqlsrv_close($conn);
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal para mostrar detalles -->
+        <div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="modalDetailLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDetailLabel">Detalles del Tipo de Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ID:</strong> <span id="modalId"></span></p>
+                        <p><strong>Descripción:</strong> <span id="modalDescripcion"></span></p>
+                        <p><strong>Fecha de Creación:</strong> <span id="modalFecha"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para actualizar -->
+        <div class="modal fade" id="modalActualizar" tabindex="-1" role="dialog" aria-labelledby="modalActualizarLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalActualizarLabel">Actualizar Tipo de Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formActualizar" action="editar_tipo_usuario.php" method="post">
+                            <input type="hidden" id="actualizarId" name="ID_TipoUsuario">
+                            <div class="form-group">
+                                <label for="actualizarDescripcion">Descripción:</label>
+                                <input type="text" class="form-control" id="actualizarDescripcion" name="Descripcion_Usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="actualizarFecha">Fecha de Creación:</label>
+                                <input type="datetime-local" class="form-control" id="actualizarFecha" name="FechaCreacion" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript para el manejo de modales -->
+    <script src="./scriptmodal.js"></script>
+</body>
+</html>
+</html>

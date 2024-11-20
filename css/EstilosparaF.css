@@ -1,0 +1,164 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #eef2f7;
+    /* Color de fondo suave */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    /* Fondo blanco para el contenedor */
+    padding: 40px;
+    border-radius: 15px;
+    /* Bordes redondeados */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    /* Sombra más suave */
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    /* Color de texto para encabezados */
+    margin-bottom: 25px;
+    font-weight: 700;
+    /* Negrita */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    /* Negrita */
+    color: #34495e;
+    /* Color de texto de las etiquetas */
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #bdc3c7;
+    /* Borde gris claro */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #5cb85c;
+    /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+    /* Sombra al enfocar */
+    outline: none;
+    /* Sin contorno */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto del botón */
+    border: none;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cursor de puntero */
+    font-size: 18px;
+    font-weight: bold;
+    /* Negrita */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Transiciones suaves */
+    margin-bottom: 15px;
+    /* Espacio entre botones */
+}
+
+button:hover {
+    background-color: #218838;
+    /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px);
+    /* Efecto de elevación */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Eliminar espacios entre celdas */
+    margin-top: 20px;
+    /* Espacio arriba de la tabla */
+    border-radius: 8px;
+    /* Bordes redondeados para la tabla */
+    overflow: hidden;
+    /* Para mostrar bordes redondeados */
+}
+
+th,
+td {
+    padding: 15px;
+    /* Espaciado interno en las celdas */
+    text-align: left;
+    /* Alinear el texto a la izquierda */
+    border-bottom: 1px solid #bdc3c7;
+    /* Línea inferior para separación */
+}
+
+th {
+    background-color: #f8f9fa;
+    /* Color de fondo para el encabezado */
+    color: #34495e;
+    /* Color del texto del encabezado */
+    font-weight: bold;
+    /* Negrita en el encabezado */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    /* Color de fondo al pasar el mouse sobre la fila */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Color alternativo para filas pares */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+    /* Color para filas impares */
+}
+
+ul {
+    list-style-type: none;
+    /* Sin viñetas */
+    padding: 0;
+}
+
+li {
+    background: #ffffff;
+    /* Fondo blanco */
+    margin: 15px 0;
+    /* Espacio entre elementos */
+    padding: 20px;
+    /* Espacio interno */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra más suave */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Transiciones suaves */
+}
+
+li:hover {
+    transform: translateY(-2px);
+    /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada */
+}

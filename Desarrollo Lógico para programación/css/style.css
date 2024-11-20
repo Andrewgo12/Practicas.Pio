@@ -1,0 +1,145 @@
+/* Estilo para el cuerpo */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Estilo para encabezados */
+h1,
+h2 {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #FF5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Botones como enlaces */
+a {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #FF5722;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 220px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #E64A19;
+}
+
+/* Estilo para las listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+ul li {
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para párrafos */
+p {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones de formulario */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para los formularios */
+form {
+    text-align: center;
+    margin: 20px;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo general de los contenedores */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Para asegurarse que el contenido no se vea comprimido en dispositivos pequeños */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1,
+    h2 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    p,
+    ul li,
+    form {
+        font-size: 16px;
+    }
+}

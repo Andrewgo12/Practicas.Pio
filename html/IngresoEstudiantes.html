@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas y Actualización de Datos</title>
+    <link rel="stylesheet" href="../css/EstiloGeneral.css">
+    <link rel="Connection" href="../Php/conexion.php">
+</head>
+<body>
+    <header>
+        <h1>Notas de Estudiantes y Actualización de Datos</h1>
+    </header>
+    <main>
+        <section id="notas-estudiantes">
+            <h2>Ver y Actualizar Notas</h2>
+            <div class="info-container">
+                <div class="info-card">
+                    <h3>Consulta de Notas</h3>
+                    <form id="form-consulta-notas" action="../html/ConsultarNotas.html" method="get">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        
+                        <label for="curso">Curso:</label>
+                        <input type="text" id="curso" name="curso" required>
+                        
+                        <button type="submit">Consultar Notas</button>
+                    </form>
+                </div>
+                <div class="info-card">
+                    <h3>Actualización de Datos</h3>
+                    <form id="form-actualizacion-datos" action="../html/ActualizarDatos.html" method="get">
+                        <label for="nombre-estudiante">Nombre:</label>
+                        <input type="text" id="nombre-estudiante" name="nombre" required>
+                        
+                        <label for="email-estudiante">Email:</label>
+                        <input type="email" id="email-estudiante" name="email" required>
+                        
+                        <label for="curso-estudiante">Curso:</label>
+                        <input type="text" id="curso-estudiante" name="curso" required>
+                        
+                        <button type="submit">Actualizar Datos</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Botón para regresar a la página principal -->
+        <div class="button-container">
+            <a href="../html/Institutopio.html" class="btn">Regresar a la Página Principal</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Institución Educativa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

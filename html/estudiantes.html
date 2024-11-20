@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Registro de Estudiantes</h1>
+    </header>
+
+    <form id="formEstudiantes" onsubmit="return registrarEstudiante()">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="5" max="18" required>
+        
+        <label for="grado">Grado:</label>
+        <select id="grado" name="grado" required>
+            <option value="">Seleccione un grado</option>
+            <option value="1">1º</option>
+            <option value="2">2º</option>
+            <option value="3">3º</option>
+        </select>
+        
+        <label for="acudiente">Acudiente:</label>
+        <input type="text" id="acudiente" name="acudiente" required>
+
+        <button type="submit">Registrar Estudiante</button>
+    </form>
+
+    <button onclick="window.location.href='index.html'">Regresar al Inicio</button>
+
+    <section id="listaEstudiantes">
+        <h2>Estudiantes Registrados:</h2>
+        <ul id="estudiantesRegistrados"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sistema Escolar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
