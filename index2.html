@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Flexbox y CSS Grid</title>
+    <link rel="stylesheet" href="../Inicio/css/Styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Guía Completa de Flexbox y CSS Grid</h1>
+        <nav>
+            <ul>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#css-grid">CSS Grid</a></li>
+                <li><a href="#ejemplos">Ejemplos</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Flexbox Section -->
+        <section id="flexbox">
+            <h2>Flexbox</h2>
+
+            <!-- Flex Container -->
+            <article>
+                <h3>1. display: flex</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Activa el modo Flexbox en un contenedor.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para convertir un contenedor en un contenedor flexible, haciendo que sus elementos hijos se distribuyan de manera flexible.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Simplemente se establece en el contenedor:
+                </p>
+                <pre><code>display: flex;</code></pre>
+                <div class="flex-container" style="display: flex;">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </article>
+
+            <article>
+                <h3>9. align-self</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Permite alinear un solo elemento flexible a lo largo del eje transversal.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para cambiar la alineación de un elemento individual dentro del contenedor.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Se asigna un valor de alineación:
+                </p>
+                <pre><code>align-self: flex-end;</code></pre>
+                <div class="flex-container" style="display: flex; height: 200px;">
+                    <div class="flex-item" style="align-self: flex-end;">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </article>
+            <!-- flex-direction -->
+            <article>
+                <h3>2. flex-direction</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define la dirección en la que los elementos flexibles son colocados en el contenedor.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para especificar si los elementos flexibles se colocan en fila, columna, o en direcciones inversas.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>row</code> (predeterminado): Los elementos se colocan en una fila.</li>
+                    <li><code>row-reverse</code>: Los elementos se colocan en una fila inversa.</li>
+                    <li><code>column</code>: Los elementos se colocan en una columna.</li>
+                    <li><code>column-reverse</code>: Los elementos se colocan en una columna inversa.</li>
+                </ul>
+                <pre><code>flex-direction: row;</code></pre>
+                <div class="flex-container" style="display: flex; flex-direction: column;">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </article>
+            <!-- justify-content -->
+            <article>
+                <h3>3. justify-content</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define cómo se distribuyen los elementos flexibles a lo largo del eje principal.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para alinear elementos dentro del contenedor en el eje principal.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>flex-start</code>: Alinea los elementos al inicio del contenedor.</li>
+                    <li><code>flex-end</code>: Alinea los elementos al final del contenedor.</li>
+                    <li><code>center</code>: Alinea los elementos en el centro del contenedor.</li>
+                    <li><code>space-between</code>: Distribuye los elementos con el mismo espacio entre ellos.</li>
+                    <li><code>space-around</code>: Distribuye los elementos con espacio igual alrededor de ellos.</li>
+                </ul>
+                <pre><code>justify-content: space-between;</code></pre>
+                <div class="flex-container" style="display: flex; justify-content: space-around;">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- align-items -->
+            <article>
+                <h3>4. align-items</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define cómo se alinean los elementos a lo largo del eje transversal.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar la alineación vertical de los elementos flexibles.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>stretch</code> (predeterminado): Estira los elementos para llenar el contenedor.</li>
+                    <li><code>flex-start</code>: Alinea los elementos al inicio del contenedor.</li>
+                    <li><code>flex-end</code>: Alinea los elementos al final del contenedor.</li>
+                    <li><code>center</code>: Alinea los elementos en el centro del contenedor.</li>
+                </ul>
+                <pre><code>align-items: center;</code></pre>
+                <div class="flex-container" style="display: flex; align-items: center; height: 200px;">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- flex-wrap -->
+            <article>
+                <h3>5. flex-wrap</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Controla si los elementos flexibles se envuelven en líneas adicionales cuando no hay espacio suficiente.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para permitir que los elementos se distribuyan en múltiples líneas, lo que es útil cuando el contenido puede exceder el ancho del contenedor.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>nowrap</code> (predeterminado): Los elementos no se envuelven.</li>
+                    <li><code>wrap</code>: Los elementos se envuelven en líneas adicionales si es necesario.</li>
+                    <li><code>wrap-reverse</code>: Los elementos se envuelven en líneas adicionales en la dirección inversa.</li>
+                </ul>
+                <pre><code>flex-wrap: wrap;</code></pre>
+                <div class="flex-container" style="display: flex; flex-wrap: wrap;">
+                    <div class="flex-item" style="width: 200px;">Item 1</div>
+                    <div class="flex-item" style="width: 200px;">Item 2</div>
+                    <div class="flex-item" style="width: 200px;">Item 3</div>
+                    <div class="flex-item" style="width: 200px;">Item 4</div>
+                </div>
+            </article>
+
+            <!-- flex-grow -->
+            <article>
+                <h3>6. flex-grow</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define cómo se expanden los elementos flexibles para llenar el espacio adicional.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para hacer que los elementos flexibles crezcan proporcionalmente para llenar el espacio disponible.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Se asigna un número que indica la proporción de crecimiento:
+                </p>
+                <pre><code>flex-grow: 2;</code></pre>
+                <div class="flex-container" style="display: flex;">
+                    <div class="flex-item" style="flex-grow: 1;">Item 1</div>
+                    <div class="flex-item" style="flex-grow: 2;">Item 2</div>
+                    <div class="flex-item" style="flex-grow: 1;">Item 3</div>
+                </div>
+            </article>
+
+            <!-- flex-shrink -->
+            <article>
+                <h3>7. flex-shrink</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Controla cómo los elementos se encogen cuando no hay suficiente espacio.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para que los elementos flexibles se encojan para adaptarse al contenedor.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Se asigna un número que indica la proporción de encogimiento:
+                </p>
+                <pre><code>flex-shrink: 0;</code></pre>
+                <div class="flex-container" style="display: flex;">
+                    <div class="flex-item" style="flex-shrink: 1;">Item 1</div>
+                    <div class="flex-item" style="flex-shrink: 2;">Item 2</div>
+                    <div class="flex-item" style="flex-shrink: 1;">Item 3</div>
+                </div>
+            </article>
+
+            <!-- flex-basis -->
+            <article>
+                <h3>8. flex-basis</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define el tamaño inicial de un elemento flexible antes de que se distribuya el espacio restante.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para establecer el tamaño de los elementos antes de aplicar <code>flex-grow</code> o <code>flex-shrink</code>.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Se puede establecer un tamaño fijo o un porcentaje:
+                </p>
+                <pre><code>flex-basis: 100px;</code></pre>
+                <div class="flex-container" style="display: flex;">
+                    <div class="flex-item" style="flex-basis: 100px;">Item 1</div>
+                    <div class="flex-item" style="flex-basis: 200px;">Item 2</div>
+                    <div class="flex-item" style="flex-basis: 150px;">Item 3</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- CSS Grid Section -->
+        <section id="css-grid">
+            <h2>CSS Grid</h2>
+
+            <!-- grid-template-columns -->
+            <article>
+                <h3>1. grid-template-columns</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define las columnas de la cuadrícula.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para especificar el número de columnas y su tamaño en un contenedor de CSS Grid.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Puedes usar valores fijos, porcentajes, o la unidad <code>fr</code> para establecer el tamaño:
+                </p>
+                <pre><code>grid-template-columns: repeat(3, 1fr);</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <article>
+                <h3>5. grid-template-areas</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define áreas nombradas en la cuadrícula.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para estructurar el diseño de la cuadrícula utilizando nombres de áreas.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Se define una cuadrícula con áreas específicas:
+                </p>
+                <pre><code>
+                grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer";
+                </code></pre>
+                <div class="grid-container" style="display: grid; grid-template-areas: 'header header header' 'sidebar content content' 'footer footer footer'; gap: 10px;">
+                    <div class="grid-item" style="grid-area: header;">Header</div>
+                    <div class="grid-item" style="grid-area: sidebar;">Sidebar</div>
+                    <div class="grid-item" style="grid-area: content;">Content</div>
+                    <div class="grid-item" style="grid-area: footer;">Footer</div>
+                </div>
+            </article>
+            
+            <!-- grid-template-rows -->
+            <article>
+                <h3>2. grid-template-rows</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define las filas de la cuadrícula.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para establecer la altura de las filas dentro de un contenedor de CSS Grid.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Similar a <code>grid-template-columns</code>, puedes establecer valores fijos o usar la unidad <code>fr</code>:
+                </p>
+                <pre><code>grid-template-rows: 100px 200px;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-rows: 100px 200px;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- gap -->
+            <article>
+                <h3>3. gap</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Define el espacio entre las filas y columnas de la cuadrícula.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar el espacio entre los elementos de la cuadrícula sin usar márgenes o padding.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Puedes definir el espacio en píxeles, porcentaje, u otras unidades:
+                </p>
+                <pre><code>gap: 20px;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- grid-column -->
+            <article>
+                <h3>4. grid-column</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Controla en qué columna comienza y termina un elemento.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para que un elemento abarque varias columnas o se posicione en una columna específica.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Puedes especificar el inicio y el final de la columna usando números o nombres de líneas:
+                </p>
+                <pre><code>grid-column: 1 / 3;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <div class="grid-item" style="grid-column: 1 / 3;">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- grid-row -->
+            <article>
+                <h3>5. grid-row</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Controla en qué fila comienza y termina un elemento.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Similar a <code>grid-column</code>, se usa para posicionar un elemento en una fila específica o hacer que abarque varias filas.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Puedes especificar el inicio y el final de la fila usando números o nombres de líneas:
+                </p>
+                <pre><code>grid-row: 1 / 2;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; grid-template-rows: 100px 200px;">
+                    <div class="grid-item" style="grid-row: 1 / 3;">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- justify-items -->
+            <article>
+                <h3>6. justify-items</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Alinea los elementos de la cuadrícula horizontalmente dentro de sus celdas.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar cómo se posicionan los elementos dentro de sus celdas en el eje horizontal.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>start</code>: Alinea los elementos al inicio de la celda.</li>
+                    <li><code>center</code>: Alinea los elementos en el centro de la celda.</li>
+                    <li><code>end</code>: Alinea los elementos al final de la celda.</li>
+                    <li><code>stretch</code>: Estira los elementos para llenar la celda (predeterminado).</li>
+                </ul>
+                <pre><code>justify-items: center;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; justify-items: center;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- align-items -->
+            <article>
+                <h3>7. align-items</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Alinea los elementos de la cuadrícula verticalmente dentro de sus celdas.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar cómo se posicionan los elementos dentro de sus celdas en el eje vertical.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>start</code>: Alinea los elementos al inicio de la celda.</li>
+                    <li><code>center</code>: Alinea los elementos en el centro de la celda.</li>
+                    <li><code>end</code>: Alinea los elementos al final de la celda.</li>
+                    <li><code>stretch</code>: Estira los elementos para llenar la celda (predeterminado).</li>
+                </ul>
+                <pre><code>align-items: end;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- justify-content -->
+            <article>
+                <h3>8. justify-content</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Alinea el contenido de la cuadrícula horizontalmente dentro del contenedor.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar la distribución de las columnas dentro del contenedor de la cuadrícula.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>start</code>: Alinea las columnas al inicio del contenedor.</li>
+                    <li><code>center</code>: Alinea las columnas en el centro del contenedor.</li>
+                    <li><code>end</code>: Alinea las columnas al final del contenedor.</li>
+                    <li><code>space-between</code>: Distribuye las columnas uniformemente, con el primer elemento alineado al inicio y el último al final.</li>
+                    <li><code>space-around</code>: Distribuye las columnas uniformemente con espacio alrededor de cada columna.</li>
+                    <li><code>space-evenly</code>: Distribuye las columnas uniformemente con el mismo espacio entre ellas.</li>
+                </ul>
+                <pre><code>justify-content: space-between;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; justify-content: space-between;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+            <!-- align-content -->
+            <article>
+                <h3>9. align-content</h3>
+                <p>
+                    <strong>¿Qué hace?</strong> Alinea el contenido de la cuadrícula verticalmente dentro del contenedor.
+                    <br>
+                    <strong>¿Para qué se usa?</strong> Se usa para controlar la distribución de las filas dentro del contenedor de la cuadrícula.
+                    <br>
+                    <strong>¿Cómo se usa?</strong> Valores comunes:
+                </p>
+                <ul>
+                    <li><code>start</code>: Alinea las filas al inicio del contenedor.</li>
+                    <li><code>center</code>: Alinea las filas en el centro del contenedor.</li>
+                    <li><code>end</code>: Alinea las filas al final del contenedor.</li>
+                    <li><code>space-between</code>: Distribuye las filas uniformemente, con la primera fila alineada al inicio y la última al final.</li>
+                    <li><code>space-around</code>: Distribuye las filas uniformemente con espacio alrededor de cada fila.</li>
+                    <li><code>space-evenly</code>: Distribuye las filas uniformemente con el mismo espacio entre ellas.</li>
+                </ul>
+                <pre><code>align-content: center;</code></pre>
+                <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: center;">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>

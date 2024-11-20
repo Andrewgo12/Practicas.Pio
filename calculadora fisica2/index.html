@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras de Física</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadoras de Física</h1>
+        <button id="menu-toggle">☰ Menú</button>
+        <nav id="side-menu">
+            <ul>
+                <li>
+                    <a href="#movimientos">Movimientos</a>
+                </li>
+                <li>
+                    <a href="#velocidades-angulares">Velocidades Angulares</a>
+                </li>
+                <li>
+                    <a href="#resortes-muelles">Resortes y Muelles</a>
+                </li>
+                <li>
+                    <a href="#densidad">Densidad</a>
+                </li>
+                <li>
+                    <a href="#fuerzas-aceleraciones">Fuerzas y Aceleraciones</a>
+                </li>
+                <li>
+                    <a href="#vectores">Vectores</a>
+                </li>
+                <li>
+                    <a href="#notacion-cientifica">Notación Científica</a>
+                </li>
+                <li>
+                    <a href="#efecto-doppler">Efecto Doppler</a>
+                </li>
+                <li>
+                    <a href="#campos-magneticos">Campos Magnéticos</a>
+                </li>
+                <li>
+                    <a href="#campos-electricos">Campos Eléctricos</a>
+                </li>
+                <li>
+                    <a href="#biot-savart">Ley de Biot-Savart</a>
+                </li>
+                <li>
+                    <a href="#fuerza-magnetica">Fuerza Magnética</a>
+                </li>
+                <li>
+                    <a href="#ley-ampere">Ley de Ampère</a>
+                </li>
+                <li>
+                    <a href="#ley-gauss-magnetismo">Ley de Gauss en el Magnetismo</a>
+                </li>
+                <li>
+                    <a href="#fuerzas-magneticas">Fuerzas Magnéticas</a>
+                </li>
+                <li>
+                    <a href="#movimiento-particula">Movimiento de una Partícula</a>
+                </li>
+                <li>
+                    <a href="#fuerza-magnetica-objeto">Fuerza Magnética sobre un Objeto</a>
+                </li>
+                <li>
+                    <a href="#movimiento-torsion">Movimiento de Torsión</a>
+                </li>
+                <li>
+                    <a href="#fuerza-electromotriz">Fuerza Electromotriz</a>
+                </li>
+                <li>
+                    <a href="#resistencia-serie-paralelo">Resistencia en Serie y en Paralelo</a>
+                </li>
+                <li>
+                    <a href="#circuitos-rc">Circuitos RC</a>
+                </li>
+                <li>
+                    <a href="#corriente-electrica">Corriente Eléctrica</a>
+                </li>
+                <li>
+                    <a href="#modelo-microscopico">Modelo Microscópico</a>
+                </li>
+                <li>
+                    <a href="#resistencia-electrica">Resistencia Eléctrica</a>
+                </li>
+                <li>
+                    <a href="#potencia-electrica">Potencia Eléctrica</a>
+                </li>
+                <li>
+                    <a href="#calculo-capacitancia">Cálculo de Capacitancia</a>
+                </li>
+                <li>
+                    <a href="#combinacion-capacitancia">Combinación de Capacitancia</a>
+                </li>
+                <li>
+                    <a href="#energia-capacitor">Energía Almacenada en un Capacitor</a>
+                </li>
+                <li>
+                    <a href="#potencial-electrico">Potencial Eléctrico y Energía</a>
+                </li>
+                <li>
+                    <a href="#diferencias-potencial">Diferencias de Potencial y Potencial Eléctrico</a>
+                </li>
+                <li>
+                    <a href="#flujo-electrico">Flujo Eléctrico</a>
+                </li>
+                <li>
+                    <a href="#ley-gauss">Ley de Gauss</a>
+                </li>
+                <li>
+                    <a href="#conductores-equilibrio">Conductores en Equilibrio</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Campos Eléctricos -->
+        <section id="campos-electricos">
+            <h2>Calculadoras de Campos Eléctricos</h2>
+            
+            <!-- Fuerza Eléctrica entre dos Cargas -->
+            <h3>Fuerza Eléctrica entre dos Cargas <span class="formula">F = k * (q1 * q2) / r²</span></h3>
+            <form id="fuerzaElectricaForm">
+                <label for="carga1">Carga 1 (Coulombs):</label>
+                <input type="number" id="carga1" name="carga1" step="any">
+                
+                <label for="carga2">Carga 2 (Coulombs):</label>
+                <input type="number" id="carga2" name="carga2" step="any">
+                
+                <label for="distanciaCargas">Distancia entre las Cargas (m):</label>
+                <input type="number" id="distanciaCargas" name="distanciaCargas" step="any">
+                
+                <button type="button" onclick="calcularFuerzaElectrica()">Calcular Fuerza Eléctrica</button>
+            </form>
+            <p id="resultadoFuerzaElectrica"></p>
+    
+            <!-- Campo Eléctrico de una Carga -->
+            <h3>Campo Eléctrico de una Carga <span class="formula">E = k * Q / r²</span></h3>
+            <form id="campoElectricoForm">
+                <label for="cargaCampo">Carga (Coulombs):</label>
+                <input type="number" id="cargaCampo" name="cargaCampo" step="any">
+                
+                <label for="distanciaCampo">Distancia (m):</label>
+                <input type="number" id="distanciaCampo" name="distanciaCampo" step="any">
+                
+                <button type="button" onclick="calcularCampoElectrico()">Calcular Campo Eléctrico</button>
+            </form>
+            <p id="resultadoCampoElectrico"></p>
+    
+            <!-- Potencial Eléctrico de una Carga -->
+            <h3>Potencial Eléctrico de una Carga <span class="formula">V = k * Q / r</span></h3>
+            <form id="potencialElectricoForm">
+                <label for="cargaPotencial">Carga (Coulombs):</label>
+                <input type="number" id="cargaPotencial" name="cargaPotencial" step="any">
+                
+                <label for="distanciaPotencial">Distancia (m):</label>
+                <input type="number" id="distanciaPotencial" name="distanciaPotencial" step="any">
+                
+                <button type="button" onclick="calcularPotencialElectrico()">Calcular Potencial Eléctrico</button>
+            </form>
+            <p id="resultadoPotencialElectrico"></p>
+    
+            <!-- Capacitancia de un Condensador -->
+            <h3>Capacitancia de un Condensador <span class="formula">C = Q / V</span></h3>
+            <form id="capacitanciaForm">
+                <label for="cargaCapacitor">Carga (Coulombs):</label>
+                <input type="number" id="cargaCapacitor" name="cargaCapacitor" step="any">
+                
+                <label for="voltajeCapacitor">Voltaje (Volts):</label>
+                <input type="number" id="voltajeCapacitor" name="voltajeCapacitor" step="any">
+                
+                <button type="button" onclick="calcularCapacitancia()">Calcular Capacitancia</button>
+            </form>
+            <p id="resultadoCapacitancia"></p>
+    
+            <!-- Energía Almacenada en un Condensador -->
+            <h3>Energía Almacenada en un Condensador <span class="formula">U = 0.5 * C * V²</span></h3>
+            <form id="energiaCondensadorForm">
+                <label for="capacitanciaEnergia">Capacitancia (F):</label>
+                <input type="number" id="capacitanciaEnergia" name="capacitanciaEnergia" step="any">
+                
+                <label for="voltajeEnergia">Voltaje (V):</label>
+                <input type="number" id="voltajeEnergia" name="voltajeEnergia" step="any">
+                
+                <button type="button" onclick="calcularEnergiaCondensador()">Calcular Energía</button>
+            </form>
+            <p id="resultadoEnergiaCondensador"></p>
+    
+            <!-- Campo Eléctrico entre dos Cargas -->
+            <h3>Campo Eléctrico entre dos Cargas <span class="formula">E = k * (q1 / r²) + k * (q2 / r²)</span></h3>
+            <form id="campoElectricoDobleForm">
+                <label for="carga1Doble">Carga 1 (Coulombs):</label>
+                <input type="number" id="carga1Doble" name="carga1Doble" step="any">
+                
+                <label for="carga2Doble">Carga 2 (Coulombs):</label>
+                <input type="number" id="carga2Doble" name="carga2Doble" step="any">
+                
+                <label for="distanciaCargasDoble">Distancia entre las Cargas (m):</label>
+                <input type="number" id="distanciaCargasDoble" name="distanciaCargasDoble" step="any">
+                
+                <button type="button" onclick="calcularCampoElectricoDoble()">Calcular Campo Eléctrico Doble</button>
+            </form>
+            <p id="resultadoCampoElectricoDoble"></p>
+    
+            <!-- Potencial Eléctrico entre dos Cargas -->
+            <h3>Potencial Eléctrico entre dos Cargas <span class="formula">V = k * (q1 / r) + k * (q2 / r)</span></h3>
+            <form id="potencialElectricoDobleForm">
+                <label for="carga1DoblePotencial">Carga 1 (Coulombs):</label>
+                <input type="number" id="carga1DoblePotencial" name="carga1DoblePotencial" step="any">
+                
+                <label for="carga2DoblePotencial">Carga 2 (Coulombs):</label>
+                <input type="number" id="carga2DoblePotencial" name="carga2DoblePotencial" step="any">
+                
+                <label for="distanciaCargasDoblePotencial">Distancia (m):</label>
+                <input type="number" id="distanciaCargasDoblePotencial" name="distanciaCargasDoblePotencial" step="any">
+                
+                <button type="button" onclick="calcularPotencialElectricoDoble()">Calcular Potencial Eléctrico Doble</button>
+            </form>
+            <p id="resultadoPotencialElectricoDoble"></p>
+        </section>
+    
+        <!-- Sección de Electricidad -->
+        <section id="electricidad">
+            <h2>Calculadoras de Electricidad</h2>
+            
+            <!-- Ley de Ohm -->
+            <h3>Ley de Ohm <span class="formula">V = I * R</span></h3>
+            <form id="leyOhmForm">
+                <label for="voltaje">Voltaje (V):</label>
+                <input type="number" id="voltaje" name="voltaje" step="any">
+                
+                <label for="resistencia">Resistencia (Ω):</label>
+                <input type="number" id="resistencia" name="resistencia" step="any">
+                
+                <button type="button" onclick="calcularCorriente()">Calcular Corriente</button>
+            </form>
+            <p id="resultadoCorriente"></p>
+    
+            <!-- Potencia Eléctrica -->
+            <h3>Potencia Eléctrica <span class="formula">P = V * I</span></h3>
+            <form id="potenciaElectricaForm">
+                <label for="corriente">Corriente (A):</label>
+                <input type="number" id="corriente" name="corriente" step="any">
+                
+                <label for="voltajePotencia">Voltaje (V):</label>
+                <input type="number" id="voltajePotencia" name="voltajePotencia" step="any">
+                
+                <button type="button" onclick="calcularPotencia()">Calcular Potencia</button>
+            </form>
+            <p id="resultadoPotencia"></p>
+    
+            <!-- Resistencia en Serie -->
+            <h3>Resistencia en Serie <span class="formula">R_total = R1 + R2 + ... + Rn</span></h3>
+            <form id="resistenciaSerieForm">
+                <label for="resistenciaSerie">Resistencias (Ω, separadas por comas):</label>
+                <input type="text" id="resistenciaSerie" name="resistenciaSerie">
+                
+                <button type="button" onclick="calcularResistenciaSerie()">Calcular Resistencia en Serie</button>
+            </form>
+            <p id="resultadoResistenciaSerie"></p>
+    
+            <!-- Resistencia en Paralelo -->
+            <h3>Resistencia en Paralelo <span class="formula">1 / R_total = 1 / R1 + 1 / R2 + ... + 1 / Rn</span></h3>
+            <form id="resistenciaParaleloForm">
+                <label for="resistenciaParalelo">Resistencias (Ω, separadas por comas):</label>
+                <input type="text" id="resistenciaParalelo" name="resistenciaParalelo">
+                
+                <button type="button" onclick="calcularResistenciaParalelo()">Calcular Resistencia en Paralelo</button>
+            </form>
+            <p id="resultadoResistenciaParalelo"></p>
+    
+            <!-- Capacitancia de un Condensador en Serie -->
+            <h3>Capacitancia de un Condensador en Serie <span class="formula">1 / C_total = 1 / C1 + 1 / C2 + ... + 1 / Cn</span></h3>
+            <form id="capacitanciaSerieForm">
+                <label for="capacitanciaSerie">Capacitancias (F, separadas por comas):</label>
+                <input type="text" id="capacitanciaSerie" name="capacitanciaSerie">
+                
+                <button type="button" onclick="calcularCapacitanciaSerie()">Calcular Capacitancia en Serie</button>
+            </form>
+            <p id="resultadoCapacitanciaSerie"></p>
+    
+            <!-- Capacitancia de un Condensador en Paralelo -->
+            <h3>Capacitancia de un Condensador en Paralelo <span class="formula">C_total = C1 + C2 + ... + Cn</span></h3>
+            <form id="capacitanciaParaleloForm">
+                <label for="capacitanciaParalelo">Capacitancias (F, separadas por comas):</label>
+                <input type="text" id="capacitanciaParalelo" name="capacitanciaParalelo">
+                
+                <button type="button" onclick="calcularCapacitanciaParalelo()">Calcular Capacitancia en Paralelo</button>
+            </form>
+            <p id="resultadoCapacitanciaParalelo"></p>
+        </section>
+        <section id="image-gallery">
+            <h2>Galería de Imágenes</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="imagen1.png" alt="Imagen 1">
+                </div>
+                <div class="image-item">
+                    <img src="imagen2.png" alt="Imagen 2">
+                </div>
+                <div class="image-item">
+                    <img src="imagen3.png" alt="Imagen 3">
+                </div>
+                <div class="image-item">
+                    <img src="imagen4.png" alt="Imagen 4">
+                </div>
+                <div class="image-item">
+                    <img src="imagen5.png" alt="Imagen 5">
+                </div>
+                <div class="image-item">
+                    <img src="imagen6.png" alt="Imagen 6">
+                </div>
+                <div class="image-item">
+                    <img src="imagen7.png" alt="Imagen 7">
+                </div>
+                <div class="image-item">
+                    <img src="imagen8.png" alt="Imagen 8">
+                </div>
+                <div class="image-item">
+                    <img src="imagen9.png" alt="Imagen 9">
+                </div>
+            </div>
+        </section>
+        <!-- Sección de Movimiento Rectilíneo Uniformemente Acelerado (MRUA) -->
+        <section id="mrua">
+            <h2>Calculadoras de MRUA</h2>
+            
+            <!-- Velocidad Final -->
+            <h3>Velocidad Final <span class="formula">v_f = v_i + a * t</span></h3>
+            <form id="velocidadFinalForm">
+                <label for="velocidadFinal_inicial">Velocidad Inicial (m/s):</label>
+                <input type="number" id="velocidadFinal_inicial" name="velocidadFinal_inicial" step="any">
+                
+                <label for="aceleracion">Aceleración (m/s²):</label>
+                <input type="number" id="aceleracion" name="aceleracion" step="any">
+                
+                <label for="tiempo">Tiempo (s):</label>
+                <input type="number" id="tiempo" name="tiempo" step="any">
+                
+                <button type="button" onclick="calcularVelocidadFinal()">Calcular Velocidad Final</button>
+            </form>
+            <p id="resultadoVelocidadFinal"></p>
+    
+            <!-- Distancia Recorrida -->
+            <h3>Distancia Recorrida <span class="formula">d = v_i * t + 0.5 * a * t²</span></h3>
+            <form id="distanciaRecorridaForm">
+                <label for="distanciaRecorrida_inicial">Velocidad Inicial (m/s):</label>
+                <input type="number" id="distanciaRecorrida_inicial" name="distanciaRecorrida_inicial" step="any">
+                
+                <label for="aceleracionDistancia">Aceleración (m/s²):</label>
+                <input type="number" id="aceleracionDistancia" name="aceleracionDistancia" step="any">
+                
+                <label for="tiempoDistancia">Tiempo (s):</label>
+                <input type="number" id="tiempoDistancia" name="tiempoDistancia" step="any">
+                
+                <button type="button" onclick="calcularDistanciaRecorrida()">Calcular Distancia Recorrida</button>
+            </form>
+            <p id="resultadoDistanciaRecorrida"></p>
+    
+            <!-- Aceleración -->
+            <h3>Aceleración <span class="formula">a = (v_f - v_i) / t</span></h3>
+            <form id="aceleracionForm">
+                <label for="velocidadFinal_aceleracion">Velocidad Final (m/s):</label>
+                <input type="number" id="velocidadFinal_aceleracion" name="velocidadFinal_aceleracion" step="any">
+                
+                <label for="velocidadInicial_aceleracion">Velocidad Inicial (m/s):</label>
+                <input type="number" id="velocidadInicial_aceleracion" name="velocidadInicial_aceleracion" step="any">
+                
+                <label for="tiempo_aceleracion">Tiempo (s):</label>
+                <input type="number" id="tiempo_aceleracion" name="tiempo_aceleracion" step="any">
+                
+                <button type="button" onclick="calcularAceleracion()">Calcular Aceleración</button>
+            </form>
+            <p id="resultadoAceleracion"></p>
+    
+            <!-- Velocidad Media -->
+            <h3>Velocidad Media <span class="formula">v_m = (v_i + v_f) / 2</span></h3>
+            <form id="velocidadMediaForm">
+                <label for="velocidadInicial_media">Velocidad Inicial (m/s):</label>
+                <input type="number" id="velocidadInicial_media" name="velocidadInicial_media" step="any">
+                
+                <label for="velocidadFinal_media">Velocidad Final (m/s):</label>
+                <input type="number" id="velocidadFinal_media" name="velocidadFinal_media" step="any">
+                
+                <button type="button" onclick="calcularVelocidadMedia()">Calcular Velocidad Media</button>
+            </form>
+            <p id="resultadoVelocidadMedia"></p>
+        </section>
+    
+        <!-- Sección de Movimiento Circular -->
+        <section id="movimiento-circular">
+            <h2>Calculadoras de Movimiento Circular</h2>
+            
+            <!-- Velocidad Tangencial -->
+            <h3>Velocidad Tangencial <span class="formula">v = ω * r</span></h3>
+            <form id="velocidadTangencialForm">
+                <label for="omega_tangencial">Velocidad Angular (rad/s):</label>
+                <input type="number" id="omega_tangencial" name="omega_tangencial" step="any">
+                
+                <label for="radio_tangencial">Radio (m):</label>
+                <input type="number" id="radio_tangencial" name="radio_tangencial" step="any">
+                
+                <button type="button" onclick="calcularVelocidadTangencial()">Calcular Velocidad Tangencial</button>
+            </form>
+            <p id="resultadoVelocidadTangencial"></p>
+    
+            <!-- Aceleración Centripeta -->
+            <h3>Aceleración Centripeta <span class="formula">a_c = v² / r</span></h3>
+            <form id="aceleracionCentripetaForm">
+                <label for="velocidad_centripeta">Velocidad Tangencial (m/s):</label>
+                <input type="number" id="velocidad_centripeta" name="velocidad_centripeta" step="any">
+                
+                <label for="radio_centripeta">Radio (m):</label>
+                <input type="number" id="radio_centripeta" name="radio_centripeta" step="any">
+                
+                <button type="button" onclick="calcularAceleracionCentripeta()">Calcular Aceleración Centripeta</button>
+            </form>
+            <p id="resultadoAceleracionCentripeta"></p>
+    
+            <!-- Periodo de Rotación -->
+            <h3>Periodo de Rotación <span class="formula">T = 2 * π * r / v</span></h3>
+            <form id="periodoRotacionForm">
+                <label for="velocidad_rotacion">Velocidad Tangencial (m/s):</label>
+                <input type="number" id="velocidad_rotacion" name="velocidad_rotacion" step="any">
+                
+                <label for="radio_rotacion">Radio (m):</label>
+                <input type="number" id="radio_rotacion" name="radio_rotacion" step="any">
+                
+                <button type="button" onclick="calcularPeriodoRotacion()">Calcular Periodo de Rotación</button>
+            </form>
+            <p id="resultadoPeriodoRotacion"></p>
+    
+            <!-- Frecuencia -->
+            <h3>Frecuencia <span class="formula">f = 1 / T</span></h3>
+            <form id="frecuenciaForm">
+                <label for="periodo_frecuencia">Periodo (s):</label>
+                <input type="number" id="periodo_frecuencia" name="periodo_frecuencia" step="any">
+                
+                <button type="button" onclick="calcularFrecuencia()">Calcular Frecuencia</button>
+            </form>
+            <p id="resultadoFrecuencia"></p>
+        </section>
+    
+        <!-- Sección de Movimiento en Campos Magnéticos -->
+        <section id="campos-magneticos">
+            <h2>Calculadoras de Campos Magnéticos</h2>
+            
+            <!-- Fuerza Magnética -->
+            <h3>Fuerza Magnética <span class="formula">F = q * v * B * sen(θ)</span></h3>
+            <form id="fuerzaMagneticaForm">
+                <label for="carga_magnetica">Carga (Coulombs):</label>
+                <input type="number" id="carga_magnetica" name="carga_magnetica" step="any">
+                
+                <label for="velocidad_magnetica">Velocidad (m/s):</label>
+                <input type="number" id="velocidad_magnetica" name="velocidad_magnetica" step="any">
+                
+                <label for="campo_magnetico">Campo Magnético (T):</label>
+                <input type="number" id="campo_magnetico" name="campo_magnetico" step="any">
+                
+                <label for="angulo">Ángulo (grados):</label>
+                <input type="number" id="angulo" name="angulo" step="any">
+                
+                <button type="button" onclick="calcularFuerzaMagnetica()">Calcular Fuerza Magnética</button>
+            </form>
+            <p id="resultadoFuerzaMagnetica"></p>
+    
+            <!-- Campo Magnético por una Corriente -->
+            <h3>Campo Magnético por una Corriente <span class="formula">B = μ₀ * I / (2 * π * r)</span></h3>
+            <form id="campoMagneticoForm">
+                <label for="corriente_magnetico">Corriente (A):</label>
+                <input type="number" id="corriente_magnetico" name="corriente_magnetico" step="any">
+                
+                <label for="distancia_magnetico">Distancia (m):</label>
+                <input type="number" id="distancia_magnetico" name="distancia_magnetico" step="any">
+                
+                <button type="button" onclick="calcularCampoMagnetico()">Calcular Campo Magnético</button>
+            </form>
+            <p id="resultadoCampoMagnetico"></p>
+    
+            <!-- Fuerza sobre un Hilo con Corriente -->
+            <h3>Fuerza sobre un Hilo con Corriente <span class="formula">F = I * L * B * sen(θ)</span></h3>
+            <form id="fuerzaHiloForm">
+                <label for="corriente_hilo">Corriente (A):</label>
+                <input type="number" id="corriente_hilo" name="corriente_hilo" step="any">
+                
+                <label for="longitud_hilo">Longitud (m):</label>
+                <input type="number" id="longitud_hilo" name="longitud_hilo" step="any">
+                
+                <label for="campo_hilo">Campo Magnético (T):</label>
+                <input type="number" id="campo_hilo" name="campo_hilo" step="any">
+                
+                <label for="angulo_hilo">Ángulo (grados):</label>
+                <input type="number" id="angulo_hilo" name="angulo_hilo" step="any">
+                
+                <button type="button" onclick="calcularFuerzaHilo()">Calcular Fuerza sobre un Hilo</button>
+            </form>
+            <p id="resultadoFuerzaHilo"></p>
+    
+            <!-- Ley de Ampère -->
+            <h3>Ley de Ampère <span class="formula">∮ B · dl = μ₀ * I_enc</span></h3>
+            <form id="leyAmpereForm">
+                <label for="corriente_ampere">Corriente Encerrada (A):</label>
+                <input type="number" id="corriente_ampere" name="corriente_ampere" step="any">
+                
+                <button type="button" onclick="calcularLeyAmpere()">Calcular Ley de Ampère</button>
+            </form>
+            <p id="resultadoLeyAmpere"></p>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>© 2024 Kevin Andrés González Dinas. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

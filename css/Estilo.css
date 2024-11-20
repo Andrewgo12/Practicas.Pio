@@ -1,0 +1,176 @@
+.principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    grid-template-rows: repeat(3, auto); /* Tres filas de altura automática */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.sectionA {
+    grid-column: span 2; /* Ocupa dos columnas horizontalmente */
+    grid-row: span 1; /* Ocupa una fila en altura */
+    background-color: #e0f7fa;
+    border: 2px solid #00796b;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionB {
+    grid-column: 1; /* Ocupa la primera columna */
+    grid-row: 2; /* Segunda fila */
+    background-color: #ffebee;
+    border: 2px solid #c62828;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionC {
+    grid-column: 2; /* Ocupa la segunda columna */
+    grid-row: 2; /* Segunda fila */
+    background-color: #e8f5e9;
+    border: 2px solid #2e7d32;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionD {
+    grid-column: 3; /* Ocupa la tercera columna */
+    grid-row: span 2; /* Ocupa dos filas en altura */
+    background-color: #fff3e0;
+    border: 2px solid #ef6c00;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionE {
+    grid-column: 1; /* Ocupa la primera columna */
+    grid-row: 3; /* Tercera fila */
+    background-color: #ede7f6;
+    border: 2px solid #5e35b1;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionF {
+    grid-column: 2; /* Ocupa la segunda columna */
+    grid-row: 3; /* Tercera fila */
+    background-color: #f3e5f5;
+    border: 2px solid #8e24aa;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionG {
+    grid-column: 3; /* Ocupa la tercera columna */
+    grid-row: 3; /* Tercera fila */
+    background-color: #e1f5fe;
+    border: 2px solid #0288d1;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionH {
+    grid-column: 1 / span 2; /* Ocupa dos columnas */
+    grid-row: 4; /* Cuarta fila */
+    background-color: #f9fbe7;
+    border: 2px solid #afb42b;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sectionI {
+    grid-column: 3; /* Ocupa la tercera columna */
+    grid-row: 4; /* Cuarta fila */
+    background-color: #fce4ec;
+    border: 2px solid #d81b60;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#menu flexbox {
+    .principal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Espacio entre los elementos */
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    
+    .sectionA {
+        flex: 2 1 60%; /* Ocupa el 60% del ancho disponible (2 columnas) */
+        background-color: #e0f7fa;
+        border: 2px solid #00796b;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .sectionB {
+        flex: 1 1 30%; /* Ocupa el 30% del ancho disponible */
+        background-color: #ffebee;
+        border: 2px solid #c62828;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .sectionC {
+        flex: 1 1 30%; /* Ocupa el 30% del ancho disponible */
+        background-color: #e8f5e9;
+        border: 2px solid #2e7d32;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .sectionD {
+        flex: 1 1 30%; /* Ocupa el 30% del ancho disponible */
+        min-height: 200px; /* Altura mínima para mostrar el contenido */
+        background-color: #fff3e0;
+        border: 2px solid #ef6c00;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px; /* Espacio superior para separar de sectionA */
+    }
+    
+    .sectionE, .sectionF, .sectionG {
+        flex: 1 1 30%; /* Ocupa el 30% del ancho disponible */
+        background-color: #ede7f6;
+        border: 2px solid #5e35b1;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px; /* Espacio superior para separar de sectionD */
+    }
+    
+    .sectionH {
+        flex: 2 1 60%; /* Ocupa el 60% del ancho disponible (2 columnas) */
+        background-color: #f9fbe7;
+        border: 2px solid #afb42b;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px; /* Espacio superior para separar de sectionD */
+    }
+    
+    .sectionI {
+        flex: 1 1 30%; /* Ocupa el 30% del ancho disponible */
+        background-color: #fce4ec;
+        border: 2px solid #d81b60;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px; /* Espacio superior para separar de sectionH */
+    }
+}
